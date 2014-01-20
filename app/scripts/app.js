@@ -13,7 +13,7 @@ angular.module('builderApp', [
         controller: 'MainCtrl'
       })
       .when('/login', {
-        templateUrl: 'partials/login',
+        templateUrl: 'partials/main',
         controller: 'LoginCtrl'
       })
       .when('/signup', {
@@ -36,7 +36,6 @@ angular.module('builderApp', [
       return {
         'responseError': function(response) {
           if(response.status === 401 || response.status === 403) {
-            $location.path('/login');
             return $q.reject(response);
           }
           else {
